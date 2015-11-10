@@ -4,7 +4,7 @@ echo "***************************"
 echo "*** Store Microservice ****"
 echo "***************************"
 
-cd ${HOME}/store
+cd ${BOOKER_HOME}/store
 
 if [ "$1" != "" ];
 then

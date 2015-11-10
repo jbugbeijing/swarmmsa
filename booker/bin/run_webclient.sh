@@ -4,7 +4,7 @@ echo "********************************"
 echo "*** Web-Client Microservice ****"
 echo "********************************"
 
-cd ${HOME}/web-client
+cd ${BOOKER_HOME}/web-client
 
 if [ "$1" != "" ];
 then
