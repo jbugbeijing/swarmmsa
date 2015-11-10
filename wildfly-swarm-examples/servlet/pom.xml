@@ -11,32 +11,29 @@
   <parent>
     <groupId>org.wildfly.swarm.examples</groupId>
     <artifactId>wildfly-swarm-examples-parent</artifactId>
-    <version>1.0.0.Alpha6-SNAPSHOT</version>
+    <version>1.0.0.Alpha5</version>
     <relativePath>../</relativePath>
   </parent>
 
-  <artifactId>wildfly-swarm-example-jaxrs-shrinkwrap</artifactId>
+  <artifactId>wildfly-swarm-example-servlet</artifactId>
 
-  <name>WildFly Swarm Examples: JAX-RS Shrinkwrap</name>
-  <description>WildFly Swarm Examples: JAX-RS Shrinkwrap</description>
+  <name>WildFly Swarm Examples: Servlet</name>
+  <description>WildFly Swarm Examples: Servlet</description>
 
-  <packaging>jar</packaging>
+  <packaging>war</packaging>
 
   <build>
     <plugins>
       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <configuration>
+          <failOnMissingWebXml>false</failOnMissingWebXml>
+        </configuration>
+      </plugin>
+      <plugin>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>wildfly-swarm-plugin</artifactId>
-        <configuration>
-          <mainClass>org.wildfly.swarm.examples.jaxrs.shrinkwrap.Main</mainClass>
-        </configuration>
-        <executions>
-          <execution>
-            <goals>
-              <goal>package</goal>
-            </goals>
-          </execution>
-        </executions>
       </plugin>
     </plugins>
   </build>
@@ -44,7 +41,7 @@
   <dependencies>
     <dependency>
       <groupId>org.wildfly.swarm</groupId>
-      <artifactId>wildfly-swarm-jaxrs</artifactId>
+      <artifactId>wildfly-swarm-undertow</artifactId>
       <version>${version.wildfly-swarm}</version>
     </dependency>
     <dependency>

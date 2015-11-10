@@ -11,32 +11,30 @@
   <parent>
     <groupId>org.wildfly.swarm.examples</groupId>
     <artifactId>wildfly-swarm-examples-parent</artifactId>
-    <version>1.0.0.Alpha6-SNAPSHOT</version>
+    <version>1.0.0.Alpha5</version>
     <relativePath>../</relativePath>
   </parent>
 
-  <artifactId>wildfly-swarm-example-simple</artifactId>
+  <artifactId>wildfly-swarm-example-jaxrs</artifactId>
 
-  <name>WildFly Swarm Examples: Simple</name>
-  <description>WildFly Swarm Examples: Simple</description>
+  <name>WildFly Swarm Examples: JAX-RS</name>
+  <description>WildFly Swarm Examples: JAX-RS</description>
 
-  <packaging>jar</packaging>
+  <packaging>war</packaging>
 
   <build>
     <plugins>
       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <configuration>
+          <failOnMissingWebXml>false</failOnMissingWebXml>
+          <packagingExcludes>WEB-INF/lib/wildfly-swarm-*.jar</packagingExcludes>
+        </configuration>
+      </plugin>
+      <plugin>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>wildfly-swarm-plugin</artifactId>
-        <configuration>
-          <mainClass>org.wildfly.swarm.examples.simple.Main</mainClass>
-        </configuration>
-        <executions>
-          <execution>
-            <goals>
-              <goal>package</goal>
-            </goals>
-          </execution>
-        </executions>
       </plugin>
     </plugins>
   </build>
@@ -44,8 +42,13 @@
   <dependencies>
     <dependency>
       <groupId>org.wildfly.swarm</groupId>
-      <artifactId>wildfly-swarm-container</artifactId>
+      <artifactId>wildfly-swarm-jaxrs</artifactId>
       <version>${version.wildfly-swarm}</version>
+    </dependency>
+    <dependency>
+      <groupId>joda-time</groupId>
+      <artifactId>joda-time</artifactId>
+      <version>2.7</version>
     </dependency>
   </dependencies>
 

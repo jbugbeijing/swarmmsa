@@ -11,14 +11,14 @@
   <parent>
     <groupId>org.wildfly.swarm.examples</groupId>
     <artifactId>wildfly-swarm-examples-parent</artifactId>
-    <version>1.0.0.Alpha6-SNAPSHOT</version>
+    <version>1.0.0.Alpha5</version>
     <relativePath>../</relativePath>
   </parent>
 
-  <artifactId>wildfly-swarm-example-jpa-jaxrs-cdi-shrinkwrap</artifactId>
+  <artifactId>wildfly-swarm-example-jaxrs-shrinkwrap</artifactId>
 
-  <name>WildFly Swarm Examples: JPA, JAX-RS and CDI with Shrinkwrap</name>
-  <description>WildFly Swarm Examples: JPA, JAX-RS and CDI with Shrinkwrap</description>
+  <name>WildFly Swarm Examples: JAX-RS Shrinkwrap</name>
+  <description>WildFly Swarm Examples: JAX-RS Shrinkwrap</description>
 
   <packaging>jar</packaging>
 
@@ -28,7 +28,7 @@
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>wildfly-swarm-plugin</artifactId>
         <configuration>
-          <mainClass>org.wildfly.swarm.examples.jpa.Main</mainClass>
+          <mainClass>org.wildfly.swarm.examples.jaxrs.shrinkwrap.Main</mainClass>
         </configuration>
         <executions>
           <execution>
@@ -44,19 +44,13 @@
   <dependencies>
     <dependency>
       <groupId>org.wildfly.swarm</groupId>
-      <artifactId>wildfly-swarm-jaxrs-weld</artifactId>
+      <artifactId>wildfly-swarm-jaxrs</artifactId>
       <version>${version.wildfly-swarm}</version>
     </dependency>
     <dependency>
-      <groupId>org.wildfly.swarm</groupId>
-      <artifactId>wildfly-swarm-jpa</artifactId>
-      <version>${version.wildfly-swarm}</version>
-    </dependency>
-
-    <dependency>
-      <groupId>com.h2database</groupId>
-      <artifactId>h2</artifactId>
-      <version>1.4.187</version>
+      <groupId>joda-time</groupId>
+      <artifactId>joda-time</artifactId>
+      <version>2.7</version>
     </dependency>
   </dependencies>
 
